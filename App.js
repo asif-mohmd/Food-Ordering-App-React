@@ -27,6 +27,9 @@ const RestaurantCard = () =>{
         <div className="res-card" style={{backgroundColor:"rgb(249, 249, 248)"}}>
           <img className="RestaurantCardImg" src="https://b.zmtcdn.com/data/pictures/chains/4/50574/3faca0f3f3635c659e15c0504873c503_o2_featured_v2.jpg" alt="" />
             <h3 className="RestaurantCardName">Meghana Foods</h3>
+            <h4>Chicking, KFC</h4>
+            <h4>4.4 stars</h4>
+            <h5>20 minutes</h5>
         </div>
     )
 
@@ -37,6 +40,9 @@ const Body = () =>{
         <div className="body">
             <div className="search">Search</div>
             <div className="res-container">
+                <RestaurantCard/>
+                <RestaurantCard/>
+                <RestaurantCard/>
                 <RestaurantCard/>
             </div>
         </div>
