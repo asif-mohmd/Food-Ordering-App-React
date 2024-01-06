@@ -27,13 +27,12 @@ const RestaurantCard = (props) =>{
     console.log(props)
     return(
         <div className="res-card" style={{backgroundColor:"rgb(249, 249, 248)"}}>
-          <img className="RestaurantCardImg" src="https://b.zmtcdn.com/data/pictures/chains/4/50574/3faca0f3f3635c659e15c0504873c503_o2_featured_v2.jpg" alt="" />
-            <h3 className="RestaurantCardName">Meghana Foods</h3>
-            <h4>{resData.info.name}</h4>
-            <h4>{resData.info.cuisines}</h4>
-            <h4>{resData.info.cuisines}</h4>
-            <h4>{resData.info.cuisines}</h4>
-            <h4>{resData.info.cuisines}</h4>
+          <img className="RestaurantCardImg" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + resData.info.cloudinaryImageId} alt="" />
+            <h3 className="RestaurantCardName">{resData.info.name}</h3>
+           
+            <h4>{resData.info.cuisines.join(", ")}</h4>
+            <h4>{resData.info.avgRating} Stars</h4>
+            <h4>{resData.info.costFor}</h4>
             <h5>20 minutes</h5>
         </div>
     )
@@ -646,7 +645,13 @@ const Body = () =>{
         <div className="body">
             <div className="search">Search</div>
             <div className="res-container">
+         
                 <RestaurantCard resData={resList[1]}/>
+                <RestaurantCard resData={resList[3]}/>
+                <RestaurantCard resData={resList[4]}/>
+                <RestaurantCard resData={resList[5]}/>
+
+
                 
              
             </div>
