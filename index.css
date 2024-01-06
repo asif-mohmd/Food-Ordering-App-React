@@ -1,14 +1,15 @@
-body{
+body {
     margin: 0;
 }
-.header{
+
+.header {
     display: flex;
     justify-content: space-between;
     background-color: beige;
-    
+
 }
 
-.logo{
+.logo {
     margin: 5px;
     margin-left: 10%;
     margin-top: 12%;
@@ -17,44 +18,46 @@ body{
 
 }
 
-.nav-items > ul {
+.nav-items>ul {
     display: flex;
     list-style-type: none;
     font-size: 24px;
 }
 
-.nav-items > ul > li {
+.nav-items>ul>li {
     padding: 10px;
     margin: 10px;
-    
+
 }
-.res-container{
+
+.res-container {
     display: flex;
     flex-wrap: wrap;
     margin-left: 2%;
-    
+
 }
 
-.res-card{
+.res-card {
     margin: 2%;
     padding: 5px;
-    
+
     width: 330px;
     height: 450px;
-    
+
 }
-.res-card:hover{
+
+.res-card:hover {
     cursor: pointer;
     border: 1px solid rgb(219, 219, 219);
     border-radius: 5%;
 
 }
 
-.search{
+.search {
     padding: 10px;
 }
 
-.RestaurantCardImg{
+.RestaurantCardImg {
     width: 300px;
     height: 200px;
     margin: 5%;
