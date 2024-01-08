@@ -64,10 +64,44 @@ body {
     margin: 5%;
 }
 
+.filter{
+    display: flex;
+}
+
 .filter-btn{
     margin: 1%;
     cursor: pointer;
+    height: 28px;
+    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out, border-radius 300ms ease-in-out;
+    border: none;
+    padding: 0 15px;
+    
+    
 }
+.filter-btn:hover {
+    box-shadow: 0 0 40px 40px  rgb(236, 115, 115) inset;
+    border-radius: 10px; /* Adjust the radius value as needed */
+}
+
+.search{
+    margin-top: 5px;
+}
+
+.search-btn {
+    box-shadow: rgb(219, 219, 219);
+    cursor: pointer;
+    height: 23px;
+    border: none;
+    padding: 0 15px;
+    border-radius: 6px;
+    transition: box-shadow 300ms ease-in-out; /* Added transition for smooth effect */
+}
+
+.search-btn:hover {
+    box-shadow: 0 0 10px 0  rgb(236, 115, 115) ; /* Adjust the shadow values as needed */
+}
+
+
 
 .shimmer-card{
     width: 200px;
