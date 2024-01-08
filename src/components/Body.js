@@ -6,7 +6,7 @@ const Body = () => {
   const [listOfRestaurants, setListOfRestaurant] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([])
   const [searchText, setSearchText] = useState("");
-  const [btnName,setbtnName] = useState("Top Rated Restaurant")
+  const [btnName,setBtnName] = useState("Top Rated Restaurant")
 
   useEffect(() => {
     fetchData();
@@ -64,7 +64,11 @@ const Body = () => {
               (res) => res.info.avgRating > 4.4
             );
             setFilteredRestaurant(filteredList);
+
+            btnName==="Top Rated Restaurant" ? setBtnName("Show All Restaurants") : setBtnName("Top Rated Restaurant")
+            btnName==="Top Rated Restaurant" ?  setFilteredRestaurant(filteredList) :  setFilteredRestaurant(listOfRestaurants)
           }}
+          
         >
           {btnName}
         </button>
