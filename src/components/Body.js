@@ -4,7 +4,10 @@ import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurant] = useState([]);
+  const [filteredRestaurant, setFilteredRestaurant] = useState([])
   const [searchText, setSearchText] = useState("");
+  const [btnName,setbtnName] = useState("Top Rated Restaurant")
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -19,6 +22,9 @@ const Body = () => {
     setListOfRestaurant(
       json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
     );
+    setFilteredRestaurant(
+        json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
+      );
   };
 
   //   Shimmer Effect for loading screen
@@ -42,12 +48,10 @@ const Body = () => {
           <button
             className="search-btn"
             onClick={() => {
-              console.log(searchText);
-              console.log(listOfRestaurants)
+              
               const filteredRestaurant = listOfRestaurants.filter(
-                (res) =>  res.info.name.includes(searchText));
-              console.log(filteredRestaurant)
-              setListOfRestaurant(filteredRestaurant);
+                (res) =>  res.info.name.toLowerCase().includes(searchText.toLowerCase()));
+              setFilteredRestaurant(filteredRestaurant);
             }}
           >
             Search
@@ -59,14 +63,14 @@ const Body = () => {
             let filteredList = listOfRestaurants.filter(
               (res) => res.info.avgRating > 4.4
             );
-            setListOfRestaurant(filteredList);
+            setFilteredRestaurant(filteredList);
           }}
         >
-          Top Rated Restaurant
+          {btnName}
         </button>
       </div>
       <div className="res-container">
-        {listOfRestaurants.map((restaurants) => (
+        {filteredRestaurant.map((restaurants) => (
           <RestaurantCard key={restaurants.info.id} resData={restaurants} />
         ))}
       </div>
