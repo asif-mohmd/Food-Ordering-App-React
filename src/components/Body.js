@@ -15,9 +15,13 @@ const fetchData = async () =>{
     const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.89037501599536&lng=77.64229110894304&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
   
     const json = await data.json()
+    console.log("-------")
     console.log(json)
+    console.log("-------")
+     
+setListOfRestaurant(json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants)
 
-}
+}  
 
 console.log("Body rendered")
   return (
@@ -32,16 +36,16 @@ console.log("Body rendered")
             setListOfRestaurant(filteredList);
           }}
         >
-          Top Rated Restaurant
+          Top Rated Restaurant 
         </button>
       </div>
       <div className="res-container">
-        {listOfRestaurants.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+        {listOfRestaurants.map((restaurants) => (
+          <RestaurantCard key={restaurants.info.id} resData={restaurants} />
         ))}
-      </div>
+      </div>   
     </div>
   );
 };
-
+  
 export default Body;
