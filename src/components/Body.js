@@ -7,24 +7,20 @@ const Body = () => {
   const [filteredRestaurant, setFilteredRestaurant] = useState([])
   const [searchText, setSearchText] = useState("");
   const [btnName,setBtnName] = useState("Top Rated Restaurant")
-
+  
   useEffect(() => {
-    fetchData();
+     fetchData();
   }, []);
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.89037501599536&lng=77.64229110894304&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=10.096505&lng=76.45395&is-seo-home"
     );
 
     const json = await data.json();
     //optional Chaining
-    setListOfRestaurant(
-      json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
-    );
-    setFilteredRestaurant(
-        json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
-      );
+    setListOfRestaurant(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setFilteredRestaurant(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   };
 
   //   Shimmer Effect for loading screen
