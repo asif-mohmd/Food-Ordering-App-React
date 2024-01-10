@@ -8,6 +8,7 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [btnName,setBtnName] = useState("Top Rated Restaurant")
   
+  
   useEffect(() => {
      fetchData();
   }, []);
