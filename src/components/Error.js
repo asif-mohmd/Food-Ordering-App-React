@@ -9,6 +9,7 @@ const Error = () => {
     <div>
       <h1>Error Handled</h1>
       <h2>!oops something went wrong</h2>
+      <h3>{err.status}:{err.statusText}</h3>
     </div>
   );
 };
