@@ -126,6 +126,20 @@ body {
 }
 
 
+
+/* User Cards Starts */
+
+.user-card{
+    padding: 10px;
+    border: 1px solid black;
+}
+
+
+/* User Cards Ends */
+
+
+
+
 /* Shimmer cards starts */
 
 .shimmer-container{
