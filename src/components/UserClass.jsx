@@ -1,40 +1,50 @@
-
 import React from "react";
 
 // inheriting React.Componet featues(Parent class)
-class UserClass extends React.Component{
+class UserClass extends React.Component {
+  constructor(props) {
+    super(props);
 
-    constructor(props){
-        super(props)   
-        
-        this.state = {
-        count: 0,
-        count2: 2,
-        }    
+    this.state = {
+      count: 0,
+      count2: 2,
+    };
 
-    }
+    console.log("Child Constructor")
 
+  }
 
-    render(){
-        const {name,job} = this.props
-        const {count,count2} = this.state
+  componentDidMount(){
+    console.log("Child Component Did Mount")
+  }
 
-        return (
-            <div className="user-card">
-              <h1>Count = {count}</h1>
-              <h1>Count 2 = {count2}</h1>
+  render() {
+    console.log("Child Rendering Function")
 
-              <button onClick={()=>{
-                this.setState({count:this.state.count + 1})
-              }}>Increasing Button</button>
+    const { name, job } = this.props;
+    const { count, count2 } = this.state;
 
-              <h2>Name: {name}</h2>
-              <h3>Job: {job}</h3>
-              <h4>Contact:</h4>
-            </div>
-          );
+    return (
+      <div className="user-card">
 
-    }
+        <h1>Count = {count}</h1>
+        <h1>Count 2 = {count2}</h1>
+
+        <button
+          onClick={() => {
+            this.setState({ count: this.state.count + 1,
+            count2: this.state.count2 + 2
+            });
+          }}
+        >Increasing Button</button>
+
+        <h2>Name: {name}</h2>
+        <h3>Job: {job}</h3>
+        <h4>Contact:</h4>
+
+      </div>
+    );
+  }
 }
 
 export default UserClass;
