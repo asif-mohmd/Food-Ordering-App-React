@@ -9,7 +9,7 @@ const About = () => {
         
       <h1>About page</h1>
       <User name={"Asif Function"}/>
-      <UserClass name={"Asif Class"}/>
+      <UserClass name={"Asif Class"} job={"Software Development"}/>
     </div>
   );
 };
