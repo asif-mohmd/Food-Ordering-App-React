@@ -4,34 +4,44 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { LIST_OF_RESTAURANTS } from "../utils/constants";
 
+
+
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurant] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [btnName, setBtnName] = useState("Top Rated Restaurant");
 
+
+
   useEffect(() => {
     console.log("useEffect called");
     fetchData();
   }, []);
 
-  const fetchData = async () => {
-    const data = await fetch(
-      LIST_OF_RESTAURANTS
-    );
 
+
+  const fetchData = async () => {
+    const data = await fetch(LIST_OF_RESTAURANTS);
     const json = await data.json();
+
+    console.log(json)
+
     //optional Chaining
     setListOfRestaurant(
-      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
+
     setFilteredRestaurant(
-      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
+
+
   //   Shimmer Effect for loading screen
-  //  Conditional Rendering
+
+  //   Conditional Rendering
   if (listOfRestaurants.length === 0) {
     return <Shimmer />;
   }

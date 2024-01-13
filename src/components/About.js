@@ -7,25 +7,21 @@ import React from "react";
 class AboutClass extends React.Component{
     constructor(){
         super()
-
-        console.log("Parent Constructor")
     }
 
     
 
     componentDidMount(){
-        console.log("Parent Component Did Mount")
+
     }
 
     render(){
-        console.log("Parent Rendering Function")
+
         return(
             <div>
         
             <h1>About Class</h1>
-            <User name={"Asif Function"}/>
-            <UserClass name={"Asif Class"} job={"Software Development"}/>
-            <UserClass name={"jacky Class"} job={"Bugg Development"}/>
+            <UserClass />
 
           </div>
         )
