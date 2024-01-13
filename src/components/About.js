@@ -9,18 +9,13 @@ class AboutClass extends React.Component{
         super()
     }
 
-    
-
-    componentDidMount(){
-
-    }
-
     render(){
 
         return(
             <div>
         
             <h1>About Class</h1>
+            <User/>
             <UserClass />
 
           </div>
