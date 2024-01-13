@@ -1,30 +1,24 @@
-import { useEffect, useState } from "react"
-import { MENU_API } from "./constants"
-
+import { useEffect, useState } from "react";
+import { MENU_API } from "./constants";
 
 // Custom hook function
 
-const useRestaurantMenu = (resId) =>{
+const useRestaurantMenu = (resId) => {
+  const [resInfo, setResInfo] = useState(null);
 
-    const [resInfo,setResInfo] = useState(null)
+  useEffect(() => {
+    fetchMenu();
+  });
 
-    useEffect(()=>{
-        fetchMenu()
-    })
+  const fetchMenu = async () => {
+    const data = await fetch(MENU_API + resId);
 
-    const fetchMenu = async() =>{
+    const json = await data.json();
 
-        const data = await fetch(MENU_API + resId)
+    setResInfo(json.data);
+  };
 
-        const json = await data.json()
+  return resInfo;
+};
 
- console.log(json,"----------------")
-
-        setResInfo(json.data) 
-    }
-
-
-    return resInfo
-}
-
-export default useRestaurantMenu
+export default useRestaurantMenu;

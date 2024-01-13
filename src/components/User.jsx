@@ -1,9 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const User = (props) => {
   const [count, setCount] = useState(0);
-  const [count2, setCount2] = useState(1);
-
 
 
 console.log("Render")
@@ -11,7 +9,6 @@ console.log("Render")
     <div className="user-card">
 
       <h1>Count = {count}</h1>
-      <h1>Count 2 = {count2}</h1>
 
       <button
         onClick={() => {
