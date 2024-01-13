@@ -4,20 +4,8 @@ const User = (props) => {
   const [count, setCount] = useState(0);
   const [count2, setCount2] = useState(1);
 
-  useEffect(()=>{
 
-    console.log("Use Effect start")
 
-    const timer =  setInterval(()=>{
-        console.log("interval")
-    },1000)
-
-    return() =>{
-        clearInterval(timer)
-        console.log("useEffect Return")
-    }
-
-  },[])
 console.log("Render")
   return (
     <div className="user-card">
