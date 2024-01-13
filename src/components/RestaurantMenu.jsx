@@ -5,9 +5,12 @@ import { MENU_API } from "../utils/constants";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 function RestaurantMenu() {
+  // const [resInfo, setResInfo] = useState(null);
 
   const {resId} = useParams()
   const resInfo = useRestaurantMenu(resId)
+
+  console.log("=====",resInfo,"=========")
 
 
   if (resInfo === null) {

@@ -25,15 +25,16 @@ const Body = () => {
     const data = await fetch(LIST_OF_RESTAURANTS);
     const json = await data.json();
 
+    // Swiggy changing the API . So this console.log help to find the card[number] array nummber
     console.log(json)
 
     //optional Chaining
     setListOfRestaurant(
-      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
 
     setFilteredRestaurant(
-      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 

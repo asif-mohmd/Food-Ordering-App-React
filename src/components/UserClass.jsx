@@ -16,7 +16,7 @@ class UserClass extends React.Component {
     };
   }
 
-  async componentDidMount() {
+   async componentDidMount() {
 
  
 
@@ -36,7 +36,7 @@ class UserClass extends React.Component {
   }
 
   componentWillUnmount(){
-    
+     
     console.log("component will unmount")
   }
 
