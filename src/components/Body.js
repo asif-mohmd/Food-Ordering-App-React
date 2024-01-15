@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 import { LIST_OF_RESTAURANTS } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
-
-
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurant] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
@@ -16,38 +14,33 @@ const Body = () => {
 
 
   useEffect(() => {
-  
     fetchData();
   }, []);
+
+
+
   
-
-
-
   const fetchData = async () => {
     const data = await fetch(LIST_OF_RESTAURANTS);
     const json = await data.json();
 
     // Swiggy changing the API . So this console.log help to find the card[number] array nummber
-    console.log(json)
+    console.log(json);
 
     //optional Chaining
     setListOfRestaurant(
       json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
-
     setFilteredRestaurant(
       json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
-
   const onlineStatus = useOnlineStatus();
-  if(onlineStatus===false) 
-  return (
-  <h1>Looks like your offline!Please check your internet connection!</h1>
-  )
-
-
+  if (onlineStatus === false)
+    return (
+      <h1>Looks like your offline!Please check your internet connection!</h1>
+    );
 
   //   Shimmer Effect for loading screen
 

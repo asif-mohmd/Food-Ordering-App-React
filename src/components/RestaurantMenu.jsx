@@ -10,8 +10,6 @@ function RestaurantMenu() {
   const {resId} = useParams()
   const resInfo = useRestaurantMenu(resId)
 
-  console.log("=====",resInfo,"=========")
-
 
   if (resInfo === null) {
     return <Shimmer />;
