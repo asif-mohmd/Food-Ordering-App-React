@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { LIST_OF_RESTAURANTS } from "../utils/constants";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 
 
@@ -15,9 +16,10 @@ const Body = () => {
 
 
   useEffect(() => {
-    console.log("useEffect called");
+  
     fetchData();
   }, []);
+  
 
 
 
@@ -30,13 +32,20 @@ const Body = () => {
 
     //optional Chaining
     setListOfRestaurant(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
 
     setFilteredRestaurant(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
+
+
+  const onlineStatus = useOnlineStatus();
+  if(onlineStatus===false) 
+  return (
+  <h1>Looks like your offline!Please check your internet connection!</h1>
+  )
 
 
 
