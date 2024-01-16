@@ -22,12 +22,12 @@ function RestaurantMenu() {
     resInfo.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card;
 
   return (
-    <div className="menu">
-      <h1>{name}</h1>
-      <h2>{cuisines.join(", ")}</h2>
-      <h3>{costForTwoMessage}</h3>
+    <div className="m-4 p-4 w-[400] h-auto rounded-xl bg-gray-200 hover:bg-gray-100  ">
+      <h1 className="font-extrabold">{name}</h1>
+      <h2 className="font-bold">{cuisines.join(", ")}</h2>
+      <h3 className="font-bold">{costForTwoMessage}</h3>
 
-      <ul>
+      <ul className="font-medium pt-5">
         {itemCards.map((item) => (
           <li key={item.card.info.id}>
             {item.card.info.name}- {"₹ "}
