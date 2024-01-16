@@ -1,4 +1,4 @@
-import RestaurantCard  from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -10,6 +10,8 @@ const Body = () => {
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [btnName, setBtnName] = useState("Top Rated Restaurant");
+
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
   useEffect(() => {
     fetchData();
@@ -53,7 +55,6 @@ const Body = () => {
   return (
     <div className="body">
       <div className="filter flex">
-
         <div className="search m-2 p-4">
           <input
             type="text"
@@ -104,7 +105,11 @@ const Body = () => {
             key={restaurants.info.id}
             to={"/restaurants/" + restaurants.info.id}
           >
-            <RestaurantCard resData={restaurants} />
+            {restaurants.info.avgRating > 4.3 ? (
+              <RestaurantCardPromoted resData={restaurants} />
+            ) : (
+              <RestaurantCard resData={restaurants} />
+            )}
           </Link>
         ))}
       </div>
