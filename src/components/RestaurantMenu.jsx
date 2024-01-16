@@ -19,8 +19,8 @@ function RestaurantMenu() {
   const { name, cuisines, costForTwoMessage } =
     resInfo?.cards[0]?.card?.card?.info;
 
-  const { itemCards } =
-    resInfo.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card;
+  // const { itemCards } =
+  //   resInfo.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card;
 
    const categories = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
     (c)=>
@@ -29,19 +29,17 @@ function RestaurantMenu() {
     )
   
 
-  return (
-    <div className="text-center">
-      <h1 className="font-bold my-6 text-2xl ">{name}</h1>
-      <p className="font-bold">{cuisines.join(", ")}</p>
-
-      {categories.map((categories)=> (
-       < RestaurantCategory data={categories?.card?.card}/>
-      ))}
-
-
-     
-    </div>
-  );
-}
+    return (
+      <div className="text-center">
+        <h1 className="font-bold my-6 text-2xl">{name}</h1>
+        <p className="font-bold">{cuisines.join(", ")}</p>
+    
+        {categories.map((category) => (
+          <RestaurantCategory key={category.id} data={category?.card?.card} />
+        ))}
+      </div>
+    );
+    
+} 
 
 export default RestaurantMenu;
