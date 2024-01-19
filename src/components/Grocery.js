@@ -1,10 +1,7 @@
 const Grocery = () =>{
-
  
     return (
-
         <h1>This is the Grocery Store</h1>
-
     )
 }
 

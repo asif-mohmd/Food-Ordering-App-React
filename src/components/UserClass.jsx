@@ -1,4 +1,5 @@
 import React from "react";
+import UserContext from "../utils/UserContext";
 
 // inheriting React.Componet featues(Parent class)
 class UserClass extends React.Component {
@@ -53,9 +54,13 @@ class UserClass extends React.Component {
           <li className="font-semibold pt-5">Location: {location}</li>
           <li className="font-semibold">Bio: {bio}</li>
           <li className="font-semibold">Company: {company}</li>
+          <li>Logged In User: 
+            <UserContext.Consumer>
+              {({loggedInUser}) => <h1 className="text-xl font-bold">{loggedInUser}</h1>  }
+            </UserContext.Consumer> </li>
           </ul>
           
-        </div>
+        </div> 
 
       </div>
     );
