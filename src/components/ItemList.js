@@ -25,7 +25,7 @@ const ItemList = ({ items }) => {
           <div className="w-3/12 p-4 relative">
             {item.card.info.imageId ? (
               <div className="absolute">
-                <button className="p-2 mx-16 rounded-lg bg-white shadow-lg m-auto text-sm">
+                <button className="p-2 mx-16 rounded-lg bg-black text-white shadow-lg m-auto text-sm">
                   Add +
                 </button>
               </div>
