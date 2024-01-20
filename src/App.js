@@ -9,6 +9,7 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import UserContext from "./utils/UserContext";
 import Demo from "./components/Demo";
 import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 
 const Grocery = lazy(() => import("./components/Grocery"));
 const About = lazy(() => import("./components/About"));
