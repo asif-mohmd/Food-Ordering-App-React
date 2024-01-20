@@ -40,7 +40,7 @@ function RestaurantMenu() {
           <RestaurantCategory key={category?.card?.card.title} 
           data={category?.card?.card} 
           showItems={index === showIndex ? true : false}
-          setShowIndex={() => { console.log(index); setShowIndex(index) }}
+          setShowIndex={() => {setShowIndex(index) }}
           />
         ))}
       </div>

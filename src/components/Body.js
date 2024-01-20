@@ -13,12 +13,6 @@ const Body = () => {
 
   const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
-  function hai(){
-    function hai(){
-
-    }
-  }
-
   useEffect(() => {
     fetchData();
   }, []);

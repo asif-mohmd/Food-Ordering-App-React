@@ -5,12 +5,17 @@ import { addItem } from "../utils/cartSlice";
 const ItemList = ({ items }) => {
   const dispatch = useDispatch() 
 
-  const handleAddItem = () => { 
+  const handleAddItem = (item) => { 
     console.log(";;;;;;;;;;;;")
     //Dispatch an action for Redux
-    dispatch(addItem("pizz"))
+    console.log(item)
+    dispatch(addItem(item))
 
   }
+
+  //step by step guide to fix error  if item list not updating automatically.
+  // change the import path name ItemList to itemList and vise verse to fix error
+  // remove comma or quotes and make error and fix error
   
   return (
     <div>
@@ -36,7 +41,7 @@ const ItemList = ({ items }) => {
             {item.card.info.imageId ? (
               <div className="absolute">
                 <button className="p-2 mx-16 rounded-lg bg-black text-white shadow-lg m-auto text-sm"
-                onClick={handleAddItem}
+                onClick={()=>handleAddItem(item)}
                 >
                   Add +
                 </button>
