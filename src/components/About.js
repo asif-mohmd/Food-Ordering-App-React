@@ -5,7 +5,6 @@ import React from "react";
 class AboutClass extends React.Component {
   // Actually, contructor is needed only when a props comes here.otherwise dont
 
-
   constructor() {
     super();
   }
@@ -19,13 +18,9 @@ class AboutClass extends React.Component {
       </div>
     );
   }
-
 }
 
 export default AboutClass;
-
-
-
 
 // const About = () => {
 //     return (
