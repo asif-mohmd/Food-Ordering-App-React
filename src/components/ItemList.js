@@ -3,20 +3,19 @@ import { CDN_URL } from "../utils/constants";
 import { addItem } from "../utils/cartSlice";
 
 const ItemList = ({ items }) => {
-  const dispatch = useDispatch() 
+  const dispatch = useDispatch();
 
-  const handleAddItem = (item) => { 
-    console.log(";;;;;;;;;;;;")
+  const handleAddItem = (item) => {
+    console.log(";;;;;;;;;;;;");
     //Dispatch an action for Redux
-    console.log(item)
-    dispatch(addItem(item))
-
-  }
+    console.log(item);
+    dispatch(addItem(item));
+  };
 
   //step by step guide to fix error  if item list not updating automatically.
   // change the import path name ItemList to itemList and vise verse to fix error
   // remove comma or quotes and make error and fix error
-  
+
   return (
     <div>
       {items.map((item) => (
@@ -40,8 +39,9 @@ const ItemList = ({ items }) => {
           <div className="w-3/12 p-4 relative">
             {item.card.info.imageId ? (
               <div className="absolute">
-                <button className="p-2 mx-16 rounded-lg bg-black text-white shadow-lg m-auto text-sm"
-                onClick={()=>handleAddItem(item)}
+                <button
+                  className="p-2 mx-16 rounded-lg bg-black text-white shadow-lg m-auto text-sm"
+                  onClick={() => handleAddItem(item)}
                 >
                   Add +
                 </button>
