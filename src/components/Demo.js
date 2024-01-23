@@ -17,7 +17,6 @@ const Demo = () => {
 
   // const cachedFn = useCallback(() => addTwoNum(num), [])
 
-
   return (
     <div
       className={
@@ -59,11 +58,8 @@ const Demo = () => {
         </button>
       </div>
 
-
       <span>Ref: {ref.current}</span>
 
- 
- 
       <div>
         <h2>{x}</h2>
         <button
@@ -76,12 +72,8 @@ const Demo = () => {
           click normal fun
         </button>
       </div>
-
     </div>
   );
 };
 
 export default Demo;
-
-
-
